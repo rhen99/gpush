@@ -1,0 +1,20 @@
+{
+  "name": "gpush",
+  "version": "0.1.0",
+  "description": "Personal CLI to run checks, commit, and push changes",
+  "main": "src/cli.js",
+  "bin": {
+    "gpush": "src/cli.js"
+  },
+  "scripts": {
+    "start": "node src/cli.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "git",
+    "cli",
+    "workflow"
+  ],
+  "author": "",
+  "license": "ISC"
+}
