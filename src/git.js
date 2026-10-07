@@ -54,7 +54,14 @@ function commit(message, cwd) {
 }
 
 function push(cwd) {
-  const res = runGit(['push'], { cwd, stdio: 'inherit' });
+  const branch = getCurrentBranch(cwd);
+  const remotes = getRemotes(cwd);
+  const remote = remotes[0] || 'origin';
+
+  let res = runGit(['push', '-u', remote, branch], { cwd, stdio: 'inherit' });
+  if (res.status === 0) return { ok: true };
+  // retry without -u if already tracking
+  res = runGit(['push'], { cwd, stdio: 'inherit' });
   return { ok: res.status === 0 };
 }
 
