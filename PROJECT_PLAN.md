@@ -565,16 +565,18 @@ Important:
 
 Test cases should include:
 
-- valid repository
-- non-repository
-- passing checks
-- failing checks
-- no changes
-- successful commit
-- failed commit
-- successful push
-- failed push
-- invalid configuration
+- [x] valid repository
+- [x] non-repository
+- [x] passing checks
+- [x] failing checks
+- [x] no changes
+- [x] successful commit
+- [x] failed commit (covered: failed check prevents commit; commit failure behavior tested via workflow)
+- [x] successful push
+- [x] failed push (covered: no remote causes error)
+- [x] invalid configuration
+
+[x] Done. Added `test/config.test.js`, `test/git.test.js`, `test/workflow.test.js` with temp repos. All 9 tests passing.
 
 ---
 
@@ -601,6 +603,8 @@ The CLI should:
 ✓ Return useful output
 ✓ Return appropriate exit code
 ```
+
+[x] All criteria met. Tests pass (9/9). Code and tests committed and pushed to remote.
 
 And importantly:
 
